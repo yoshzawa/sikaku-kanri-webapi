@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from main1 import app as app1
+from sikaku import app as sikakuApp
 
 app = FastAPI()
 
 # "/list"にmain1.pyのアプリケーションをマウント
-app.mount("/sikaku", app1)
+app.mount("/sikaku", sikakuApp)
