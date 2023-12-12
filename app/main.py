@@ -4,4 +4,4 @@ from main1 import app as app1
 app = FastAPI()
 
 # "/list"にmain1.pyのアプリケーションをマウント
-app.mount("/list", app1)
+app.mount("/sikaku", app1)
