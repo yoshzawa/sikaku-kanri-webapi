@@ -14,3 +14,7 @@
 * ブラウザーで、「http://docker-server:8888/voucher/list 」にアクセスする。
 * ブラウザーで、「http://docker-server:8888/sikaku/docs 」にアクセスする。
 * ブラウザーで、「http://docker-server:8888/voucher/docs 」にアクセスする。
+
+## ヒント
+* docker buildで「--progress=plain」オプションを付ける
+* docker runで[--rm」オプションを付ける
