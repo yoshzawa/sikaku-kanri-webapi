@@ -11,3 +11,13 @@ products = [
 @app.get("/list")
 def get_product_list():
     return products
+
+@app.get("/{ID}")
+def get_product_item(ID:str):
+    if ID == "FE00":
+        return products[0]
+    elif ID == "FE01":
+        return products[1]
+    else:
+        return {}
+
