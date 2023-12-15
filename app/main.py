@@ -4,6 +4,6 @@ from voucher import app as voucherApp
 
 app = FastAPI()
 
-# "/list"にmain1.pyのアプリケーションをマウント
+# "/list"にsikaku.py、voucher.pyのアプリケーションをマウント
 app.mount("/sikaku", sikakuApp)
 app.mount("/voucher", voucherApp)
