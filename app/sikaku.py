@@ -16,7 +16,7 @@ def get_product_list():
 def get_product_item(ID:str):
     if ID == "FE00":
         return products[0]
-    elif ID == "FE01":
+    elif ID == "OR00":
         return products[1]
     else:
         return {}
