@@ -15,7 +15,7 @@ async def read_root(request: Request):
 
 async def login_user(base_url: str, username: str, password: str):
     login_url = f"{base_url}account/login"
-    print(f"Login URL: {login_url}")  # ログにURLを出力
+    print(f"Login URL: {login_url},username:{username},password:{password}")  # ログにURLを出力
 
 
     async with httpx.AsyncClient() as client:
@@ -30,7 +30,7 @@ async def login_user(base_url: str, username: str, password: str):
 @router.post("/check")
 async def check_user(request: Request, username: str, password: str):
     base_url = str(request.base_url)
-    print(f"Base URL: {base_url}")  # ログにURLを出力
+    print(f"Base URL: {base_url},username:{username},password:{password}")  # ログにURLを出力
 
     login_data = await login_user(base_url, username, password)
 
