@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.templating import Jinja2Templates
-from typing import Optional, SecretStr
+from typing import Optional
 import httpx
 
 router = APIRouter()
@@ -23,7 +23,7 @@ async def login_user(username: str, password: str):
     return response.json()
 
 @router.post("/check")
-async def check_user(request: Request, username: str, password: SecretStr):
+async def check_user(request: Request, username: str, password: str):
     login_data = await login_user(username, password)
     
     status = login_data.get("Status")
