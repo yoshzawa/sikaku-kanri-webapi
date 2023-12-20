@@ -13,9 +13,10 @@ async def read_root(request: Request):
     return templates.TemplateResponse("login.html", {"request": request, "data": data})
 
 
-async def login_user(username: str, password: str):
+async def login_user(base_url: str, username: str, password: str):
+    login_url = f"{base_url.rstrip('/')}/account/login"
     async with httpx.AsyncClient() as client:
-        response = await client.post("/account/login", data={"username": username, "password": password})
+        response = await client.post(login_url, data={"username": username, "password": password})
     
     if response.status_code != 200:
         raise HTTPException(status_code=response.status_code, detail="Login failed")
@@ -24,8 +25,9 @@ async def login_user(username: str, password: str):
 
 @router.post("/check")
 async def check_user(request: Request, username: str, password: str):
-    login_data = await login_user(username, password)
-    
+    base_url = str(request.base_url)
+    login_data = await login_user(base_url, username, password)
+
     status = login_data.get("Status")
     token = login_data.get("Token")
     message = login_data.get("message")
