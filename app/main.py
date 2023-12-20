@@ -4,7 +4,7 @@ from exam import app as examApp
 from sikaku import app as sikakuApp
 from voucher import app as voucherApp
 from voucherType import app as voucherTypeApp
-from myHtml import read_root
+from myHtml import router
 
 app = FastAPI()
 
@@ -14,4 +14,4 @@ app.mount("/exam", examApp)
 app.mount("/sikaku", sikakuApp)
 app.mount("/voucher", voucherApp)
 app.mount("/voucherType", voucherTypeApp)
-app.include_router(read_root)
+app.include_router(router)
