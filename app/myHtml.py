@@ -14,7 +14,7 @@ async def read_root(request: Request):
 
 
 async def login_user(base_url: str, username: str, password: str):
-    login_url = f"{base_url}/account/login"
+    login_url = "http://192.168.54.231:8888/account/login"
     print(f"Login URL: {login_url}")  # ログにURLを出力
 
     async with httpx.AsyncClient() as client:
