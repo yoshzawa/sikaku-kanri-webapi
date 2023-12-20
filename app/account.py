@@ -4,14 +4,14 @@ app = FastAPI()
 
 
 @app.post("/login")
-def get_product_item(userID:str,passcd:str):
-    if userID == "User1":
+def get_product_item(username:str,password:str):
+    if username == "User1":
         return {"Status":"OK","Token":"Kakyouin131"}
     else:
         return {"Status":"ERROR","message":"Invalid username or incorrect password"}
 
 @app.post("/checkToken")
-def get_product_item(userID:str,token:str):
+def get_product_item(username:str,token:str):
     if token == "Kakyouin131":
         return {"Status":"OK"}
     else:
