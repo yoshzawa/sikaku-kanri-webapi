@@ -1,11 +1,11 @@
 # ベースイメージを指定
 FROM python:3.9
 
-# 必要なパッケージをインストール
-RUN pip install fastapi uvicorn mysql-connector-python
-
 # Gitが必要ならインストールする
 RUN apt-get update && apt-get install -y git
+
+# 必要なパッケージをインストール
+RUN pip install fastapi uvicorn mysql-connector-python jinja2
 
 # 作業ディレクトリを設定
 WORKDIR /app
