@@ -5,6 +5,8 @@ app = FastAPI()
 
 @app.post("/login")
 def get_product_item(username:str,password:str):
+    print(f"Login username:{username},password:{password}")  # ログにURLを出力
+
     if username == "User1":
         return {"Status":"OK","Token":"Kakyouin131"}
     else:
