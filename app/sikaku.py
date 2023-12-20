@@ -9,11 +9,11 @@ Passed = [
 ]
 
 @app.get("/list")
-def get_product_list():
+def get_product_list(token:str):
     return Passed
 
 @app.get("/{ID}")
-def get_product_item(ID:str):
+def get_product_item(ID:str,token:str):
     if ID == "FE00":
         return Passed[0]
     elif ID == "OR00":
