@@ -14,7 +14,7 @@ async def read_root(request: Request):
 
 
 async def login_user(base_url: str, username: str, password: str):
-    login_url = f"{base_url.rstrip('/')}/account/login"
+    login_url = f"{base_url}/account/login"
     async with httpx.AsyncClient() as client:
         response = await client.post(login_url, data={"username": username, "password": password})
     
@@ -33,10 +33,3 @@ async def check_user(request: Request, username: str, password: str):
     message = login_data.get("message")
     
     return {"Status": status, "Token": token, "message": message}
-
-
-
-
-
-
-
