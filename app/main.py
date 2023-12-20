@@ -4,7 +4,7 @@ from exam import app as examApp
 from sikaku import app as sikakuApp
 from voucher import app as voucherApp
 from voucherType import app as voucherTypeApp
-from html import app as htmlApp
+from myHtml import app as htmlApp
 
 app = FastAPI()
 
