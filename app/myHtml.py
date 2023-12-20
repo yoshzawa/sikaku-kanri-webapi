@@ -30,6 +30,8 @@ async def login_user(base_url: str, username: str, password: str):
 @router.post("/check")
 async def check_user(request: Request, username: str, password: str):
     base_url = str(request.base_url)
+    print(f"Base URL: {base_url}")  # ログにURLを出力
+
     login_data = await login_user(base_url, username, password)
 
     status = login_data.get("Status")
