@@ -21,8 +21,8 @@ class Item(Base):
     __tablename__ = "items"
 
     id = Column(Integer, primary_key=True, index=True)
-    item_id = Column(String, index=True)
-    item_name = Column(String, index=True)
+    item_id = Column(String(4), index=True)
+    item_name = Column(String(100), index=True)
     price = Column(Integer)
 
 # テーブルが存在しない場合は作成する
