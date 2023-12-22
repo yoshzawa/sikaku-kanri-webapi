@@ -19,14 +19,6 @@ async def get_item_list(db: Session = Depends(get_db)):
     items = db.query(Item).all()
     return items
 
-@app.post("/addFord")
-async def add_item(item_id: int = Form(...), item_name: str = Form(...), price: float = Form(...), db: Session = Depends(get_db)):
-    new_item = Item(item_id=item_id, item_name=item_name, price=price)
-    db.add(new_item)
-    db.commit()
-    db.refresh(new_item)
-    return {"message": "Item added successfully", "item": new_item}
-
 @app.post("/add")
 async def add_item(item_id: int, item_name: str, price: int, db: Session = Depends(get_db)):
     new_item = Item(item_id=item_id, item_name=item_name, price=price)
