@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 # データベースの設定
 DB_USER = 'user1'
-DB_PASSWORD = 'password'
+DB_PASSWORD = 'user1'
 DB_HOST = '192.168.54.231'
 DB_NAME = 'shop1'
 
