@@ -5,7 +5,7 @@ FROM python:3.9
 RUN apt-get update && apt-get install -y git
 
 # 必要なパッケージをインストール
-RUN pip install fastapi uvicorn mysql-connector-python jinja2 httpx
+RUN pip install fastapi uvicorn mysql-connector-python jinja2 httpx sqlalchemy pymysql
 
 # 作業ディレクトリを設定
 WORKDIR /app
