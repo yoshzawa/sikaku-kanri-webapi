@@ -9,5 +9,19 @@ voucherTypes = [
 ]
 
 @app.get("/list")
-def get_voucher_type_list():
+def get_voucher_type_list(token:str):
     return voucherTypes
+
+@app.get("/{ID}")
+def get_voucher_type_item(ID:str,token:str):
+    if ID == "FESG":
+        return voucherTypes[0]
+    elif ID == "OR00":
+        return voucherTypes[1]
+    else:
+        return {}
+
+@app.post("/add")
+def get_voucherType_item(ID:str,NAME:str,token:str):
+	return "NG"
+	

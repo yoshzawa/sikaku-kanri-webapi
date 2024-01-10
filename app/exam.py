@@ -9,14 +9,18 @@ Exams = [
 ]
 
 @app.get("/list")
-def get_exam_list():
+def get_exam_list(token:str):
     return Exams
 
 @app.get("/{ID}")
-def get_exam_item(ID:str):
+def get_exam_item(ID:str,token:str):
     if ID == "FE00":
         return Exams[0]
     elif ID == "OR00":
         return Exams[1]
     else:
         return {}
+
+@app.post("/add")
+def add_exam_item(ID:str,NAME:str,token:str):
+	return "OK"

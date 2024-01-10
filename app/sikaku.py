@@ -9,14 +9,18 @@ Passed = [
 ]
 
 @app.get("/list")
-def get_product_list(token:str):
+def get_passed_list(token:str):
     return Passed
 
 @app.get("/{ID}")
-def get_product_item(ID:str,token:str):
+def get_passed_item(ID:str,token:str):
     if ID == "FE00":
         return Passed[0]
     elif ID == "OR00":
         return Passed[1]
     else:
         return {}
+
+@app.post("/add")
+def add_passed_item(ID:str,DATE:str,token:str):
+	return "OK"
