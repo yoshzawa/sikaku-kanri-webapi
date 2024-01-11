@@ -23,5 +23,5 @@ def get_voucher_type_item(ID:str,token:str):
 
 @app.post("/add")
 def get_voucherType_item(ID:str,NAME:str,token:str):
-	return "NG"
+    return {"message": "voucherType was not added successfully", "voucherType": {}}
 	

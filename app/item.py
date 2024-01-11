@@ -25,4 +25,4 @@ async def add_item(item_id: int, item_name: str, price: int, db: Session = Depen
     db.add(new_item)
     db.commit()
     db.refresh(new_item)
-    return {"message": "Item added successfully", "item": new_item}
+    return {"message": "Item was added successfully", "item": new_item}

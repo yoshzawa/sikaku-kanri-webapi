@@ -23,4 +23,5 @@ def get_exam_item(ID:str,token:str):
 
 @app.post("/add")
 def add_exam_item(ID:str,NAME:str,token:str):
-	return "OK"
+    return {"message": "Exam added successfully", "exam": {"ID": "FE00", "NAME": "基本情報技術者試験"}}
+    
