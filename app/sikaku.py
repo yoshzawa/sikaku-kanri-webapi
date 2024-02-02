@@ -23,4 +23,4 @@ def get_passed_item(ID:str,token:str):
 
 @app.post("/add")
 def add_passed_item(ID:str,DATE:str,token:str):
-    return {"message": "Passed was added successfully", "Passed": {{"ID": "FE00", "DATE": "2022/06/18"},}}
+    return {"message": "Passed was added successfully", "Passed": {"ID": "FE00", "DATE": "2022/06/18"}}
