@@ -23,5 +23,5 @@ def get_voucher_item(ID:str,token:str):
 
 @app.post("/add")
 def add_voucher_item(ID:str,DATE:str,token:str):
-    return {"message": "voucher was added successfully", "voucher": {{"ID": "FESG" , "DATE": "2024/06/20"}}}
+    return {"message": "voucher was added successfully", "voucher": {"ID": "FESG" , "DATE": "2024/06/20"}}
 	
